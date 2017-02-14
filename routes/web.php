@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/html/index-12');
+});
+
+Route::get('/cms/', function () {
+    return view('/cms/index.html');
 });
