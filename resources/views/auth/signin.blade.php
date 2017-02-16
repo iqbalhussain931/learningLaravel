@@ -16,7 +16,7 @@
                 <h3 class="text-center">Braio</h3>
                 <p class="text-center">Sign in to get in touch</p>
                 <hr class="clean">
-                <form role="form" method="POST" action="{{ route('/') }}">
+                <form role="form" method="POST" action="{{--{{ route('/') }}--}}">
                     {{ csrf_field() }}
                     <div class="form-group input-group">
                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
