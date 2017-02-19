@@ -1,4 +1,4 @@
-@extends('layouts.adminMaster')
+@extends('layouts.app1')
 
 @section('stylesheets')
     <!-- Fonts  -->
