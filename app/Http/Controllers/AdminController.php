@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Pages_urls;
 
 class AdminController extends Controller
 {
@@ -18,6 +19,8 @@ class AdminController extends Controller
     }
     public function pagesUrl()
     {
-        return view('cms/pagesUrl');
+        $pages_urls = Pages_urls::all();
+
+        return view('cms/pagesUrl' , compact('pages_urls'));
     }
 }
