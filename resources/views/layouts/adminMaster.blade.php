@@ -43,8 +43,6 @@
 
 </head>
 <body>
-
-
 <!-- Preloader -->
 <div class="loading-container">
     <div class="loading">
@@ -100,6 +98,7 @@
         <ul class="list-unstyled">
             <li class="active"><a href="#"><i class="fa fa-bookmark-o"></i><span class="nav-label">Dashboard</span></a></li>
             <li><a href="pages-url"><i class="fa fa-bookmark-o"></i><span class="nav-label">Pages URL</span></a></li>
+            <li><a href="pages"><i class="fa fa-bookmark-o"></i><span class="nav-label">Pages</span></a></li>
             <li class="has-submenu"><a href="#"><i class="fa fa-comment-o"></i> <span class="nav-label">Widgets &amp; Apps</span></a>
                 <ul class="list-unstyled">
                     <li><a href="email.html">Email</a></li>
@@ -374,6 +373,8 @@
 
 <!-- Custom JQuery -->
 <script src="../js/app/custom.js" type="text/javascript"></script>
+<script src="../js/app/jquery-ui.js" type="text/javascript"></script>
+<script src="../js/custom/myJS.js" type="text/javascript"></script>
 
 </body>
 </html>

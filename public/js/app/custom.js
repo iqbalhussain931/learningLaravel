@@ -18,7 +18,12 @@ $(window).load(function() {
 
 $(function(){
 
-	
+	$('#addUrlForm').submit(function () {
+        $.get('/cms/pages-url', function(){
+            console.log('response');
+        });
+    });
+
 	/*$('.dropdown-menu').click(function(event){
 	  event.stopPropagation();
 	});*/

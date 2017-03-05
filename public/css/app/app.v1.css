@@ -1472,3 +1472,140 @@ Just For Demo / Showcase
 	
 .showcase-icons > div:hover i{
 	font-size:26px;}
+
+
+/* Prevent the text contents of draggable elements from being selectable. */
+/*[draggable] {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	!* Required to make elements draggable in old WebKit *!
+	-khtml-user-drag: element;
+	-webkit-user-drag: element;
+}
+.column {
+	width: 100%;
+	float: left;
+	border: 2px solid #fff;
+	background-color: #2b2f3e;
+	margin-right: 5px;
+	margin-bottom: 10px;
+	-webkit-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 3px #000;
+	-ms-box-shadow: inset 0 0 3px #000;
+	box-shadow: inset 0 0 3px #000;
+	text-align: center;
+	cursor: move;
+	opacity: 1;
+}
+.column header {
+	color: #fff;
+	text-shadow: #000 0 1px;
+	box-shadow: 5px;
+	padding: 5px;
+	background-color: transparent;
+	border-bottom: none;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-ms-border-radius-topleft: 10px;
+	border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-ms-border-top-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-right-radius: 10px;
+}
+.column.over {
+	border: 2px dashed #357ebd;
+}*/
+
+
+#allWidgets {
+	position: relative;
+	list-style-type: none;
+	display: inline-block;
+	width: 100%;
+	padding: 0px;
+}
+#allWidgets li{
+	display: block;
+	list-style: none;
+	transition: all 0.3s ease;
+	margin-bottom: 10px;
+}
+#allWidgets li span {
+	color: #fff;
+}
+#allWidgets li a {
+	color: #fff;
+	display: none;
+	float: right;
+	transition: all 0.3s ease;
+}
+#allWidgets li:hover a {
+	color: #fff;
+	display: block;
+}
+#allWidgets li:hover,
+#allWidgets li:active,
+#allWidgets li:focus{
+	color: #000;
+	background-color: #3071a9;
+}
+#allWidgets li:hover span,
+#allWidgets li:active span,
+#allWidgets li:focus span{
+	color: #ffffff;
+	transition: all 0.3s ease;
+}
+
+#addWidgetsAll > span:active,
+#addWidgetsAll > span:focus{
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+#addWidgetsAll > span.active,
+#addWidgetsAll > span.active:active,
+#addWidgetsAll > span.active:focus{
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+	color: #ffffff;
+}
+.innerWidgetAddBtn{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 999;
+	display: none;
+	line-height: 32px;
+}
+#addWidgetsAll .btn.btn-default{
+	position: relative;
+	z-index: 888;
+}
+#addWidgetsAll .btn.btn-default:hover .innerWidgetAddBtn{
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
