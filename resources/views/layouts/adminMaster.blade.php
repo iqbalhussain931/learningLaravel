@@ -1,3 +1,27 @@
+<?php
+use MatthiasMullie\Minify;
+
+$sourcePath = '../css/app/app.v1.css';
+$minifier = new Minify\CSS($sourcePath);
+
+// we can even add another file, they'll then be
+// joined in 1 output file
+/*$sourcePath2 = '/path/to/second/source/css/file.css';
+$minifier->add($sourcePath2);*/
+
+// or we can just add plain CSS
+/*$css = 'body { color: #000000; }';
+$minifier->add($css);*/
+
+// save minified file to disk
+$minifiedPath = '../css/app/file.css';
+dd($minifier->minify($minifiedPath));
+
+// or just output the content
+/*dd($minifier->minify());*/
+
+?>
+
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 
@@ -99,7 +123,7 @@
             <li class="active"><a href="#"><i class="fa fa-bookmark-o"></i><span class="nav-label">Dashboard</span></a></li>
             <li><a href="pages-url"><i class="fa fa-bookmark-o"></i><span class="nav-label">Pages URL</span></a></li>
             <li><a href="pages"><i class="fa fa-bookmark-o"></i><span class="nav-label">Pages</span></a></li>
-            <li><a href="widgets"><i class="fa fa-bookmark-o"></i><span class="nav-label">Widgets</span></a></li>
+            <li><a href="wi"><i class="fa fa-bookmark-o"></i><span class="nav-label">Widgets</span></a></li>
             <li class="has-submenu"><a href="#"><i class="fa fa-comment-o"></i> <span class="nav-label">Widgets &amp; Apps</span></a>
                 <ul class="list-unstyled">
                     <li><a href="email.html">Email</a></li>

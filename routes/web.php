@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/html/index-12');
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/cms/home', 'AdminController@index');
 Route::get('/cms/pages', 'AdminController@pages');
