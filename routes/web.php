@@ -22,8 +22,40 @@ Route::post('/cms/pages-url', 'AdminController@pagesUrl');
 Route::post('/cms/pages', 'AdminController@pages');
 Route::get('/cms/createPage', 'AdminController@addNewPage');
 Route::post('/cms/createPage', 'AdminController@createNewPage');
+Route::get('/cms/widgets', 'AdminController@widgets');
+Route::post('/cms/widgets', 'AdminController@createNewWidget');
 
 
 Auth::routes();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*// YEH kaam Tumhara hoga jo controller se link
+//  Kara hai. OKay
+Route::get('/ExapleURLe', 'AdminController@createNewPage');
+
+//USE THIS ROUTE !! yeh direct view call krta hai.
+Route::get('/ExapleURLe', function (){
+    return view('file path in you view folder example contactusFolder.contactusPage');
+});*/
+
+
+
 
 

@@ -12,7 +12,7 @@
 @section('content')
 
     <div class="page-header">
-        <h1>New Page <button data-toggle="modal" data-target="#modal-addWidgets" class="btn btn-primary pull-right btn-circle">Add Widget</button></h1>
+        <h1>Create Page <button data-toggle="modal" data-target="#modal-addWidgets" class="btn btn-primary pull-right btn-circle">Add Widget</button></h1>
     </div>
     <!-- Modal Without header footer -->
     <div class="modal fade" id="modal-addWidgets" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -21,20 +21,22 @@
                 <div class="form-group col-lg-6 multiWidgets">
                     <span>Select Multiple</span>
                     <div class="switch-button xs showcase-switch-button">
-                        <input id="switch-button-1" type="checkbox" name="multiWidgets">
-                        <label for="switch-button-1"></label>
+                        <input id="switch-button-2" type="checkbox" name="multiWidgets">
+                        <label for="switch-button-2"></label>
                     </div>
                 </div>
                 <div class="form-group col-lg-12" id="addWidgetsAll">
+                    @php ($x = 1)
                     @foreach($allWidgets as $widget)
-                        <span class="btn btn-default btn-circle" data-widgetID="{{ $widget->id }}">
+                        <span class="btn btn-default btn-circle" data-index="{{ $x }}" data-widgetID="{{ $widget->id }}" data-widgetName="{{ $widget->name }}">
                             {{ $widget->name }}
                             <span class="innerWidgetAddBtn"><i class="fa fa-plus"></i></span>
                         </span>
+                        @php ($x++)
                     @endforeach
                 </div>
                 <div class="col-lg-12">
-                    <button type="button" class="btn btn-primary btn-circle addToPage hide">ADD</button>
+                    <button type="button" class="btn btn-primary btn-circle addToPage">ADD</button>
                 </div>
             </div>
         </div>
