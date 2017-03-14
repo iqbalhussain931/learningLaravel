@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('/cms', 'AdminController@index');
 Route::get('/cms/home', 'AdminController@index');
 Route::get('/cms/pages', 'AdminController@pages');
 Route::get('/cms/pages-url', 'AdminController@pagesUrl');
@@ -25,6 +26,9 @@ Route::post('/cms/widgets', 'AdminController@createNewWidget');
 
 
 Auth::routes();
+
+
+Route::get('/{indexOne}', 'HomeController@indexOne');
 
 
 

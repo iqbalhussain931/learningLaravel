@@ -43,4 +43,16 @@ class Pages extends Model
         return true;
     }
 
+    public function pageExist($index = null)
+    {
+        $R_pageName = str_replace('.php', '', $index);
+        if(Pages::where([['name', '=', $R_pageName],['slug', '=', $index.'']])->count() > 0){
+            dd("Page Found");
+            return true;
+        }else{
+            dd("Page NOT Found");
+            return false;
+        }
+    }
+
 }

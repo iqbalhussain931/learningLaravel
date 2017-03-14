@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2017 at 03:04 PM
+-- Generation Time: Mar 14, 2017 at 07:26 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -60,7 +60,10 @@ CREATE TABLE `pages` (
 
 INSERT INTO `pages` (`id`, `name`, `title`, `slug`, `status`) VALUES
 (1, 'home', NULL, NULL, 0),
-(2, 'About Us', NULL, 'about-us.php', 0);
+(2, 'About Us', NULL, 'about-us.php', 0),
+(3, 'About Us', NULL, 'about-us.php', 1),
+(4, 'About Us', NULL, 'about-us.php', 1),
+(5, 'homePage', 'homePage', 'homePage.php', 1);
 
 -- --------------------------------------------------------
 
@@ -78,7 +81,30 @@ CREATE TABLE `pages_urls` (
 --
 
 INSERT INTO `pages_urls` (`id`, `url`) VALUES
-(1, 'http://127.0.0.1:8000/home');
+(1, 'http://127.0.0.1:8000/homePage.php'),
+(2, 'http://127.0.0.1:8000/hello.php'),
+(3, 'http://127.0.0.1:8000/killer');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `page_details`
+--
+
+CREATE TABLE `page_details` (
+  `id` int(11) NOT NULL,
+  `page_id` int(11) NOT NULL,
+  `widget_id` int(11) NOT NULL,
+  `widget_order` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `page_details`
+--
+
+INSERT INTO `page_details` (`id`, `page_id`, `widget_id`, `widget_order`) VALUES
+(1, 5, 1, 0),
+(2, 5, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -152,7 +178,8 @@ CREATE TABLE `widget` (
 --
 
 INSERT INTO `widget` (`id`, `name`) VALUES
-(1, 'homePage');
+(1, 'homePage'),
+(2, 'asd');
 
 --
 -- Indexes for dumped tables
@@ -174,6 +201,12 @@ ALTER TABLE `pages`
 -- Indexes for table `pages_urls`
 --
 ALTER TABLE `pages_urls`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `page_details`
+--
+ALTER TABLE `page_details`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -216,12 +249,17 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `pages_urls`
 --
 ALTER TABLE `pages_urls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `page_details`
+--
+ALTER TABLE `page_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `roles`
 --
@@ -236,7 +274,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `widget`
 --
 ALTER TABLE `widget`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
