@@ -45,10 +45,8 @@ class HomeController extends Controller
          * @TODO - The url get process to be precises and add htaccess
          */
         if($pages_url->checkUrl($index,$this->url->to('/'))){
-            /*if($pages->pageExist($index)){
-
-            }*/
-            return $pages->pageExist($index);
+            $widgets =  $pages->getPage($index);
+            return view('/html/index' , compact('widgets'));
         }else{
             return "Url Failed";
         }
@@ -59,28 +57,6 @@ class HomeController extends Controller
         }*/
 
         //return $index;
-    }
-
-    private function minifyCSS()
-    {
-        /*$sourcePath = '../../../public/css/app/app.v1.css';
-        $minifier = new Minify\CSS($sourcePath);*/
-
-        // we can even add another file, they'll then be
-        // joined in 1 output file
-        /*$sourcePath2 = '/path/to/second/source/css/file.css';
-        $minifier->add($sourcePath2);*/
-
-        // or we can just add plain CSS
-        /*$css = 'body { color: #000000; }';
-        $minifier->add($css);*/
-
-        // save minified file to disk
-        /*$minifiedPath = '../../../public/css/app/file.css';
-        $minifier->minify($minifiedPath);*/
-
-        // or just output the content
-        /*dd($minifier->minify());*/
     }
 
 

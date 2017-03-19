@@ -43,12 +43,58 @@ class Pages extends Model
         return true;
     }
 
+    private function getPageIDbyName($name = null){
+        $page = Pages::where([['name', '=', $name],['slug', '=', $name.'.php']])->first();
+
+        return $page->id;
+    }
+
+    private function getPageWidgetsByPageID($pageID = null){
+        $pageWidgets = DB::table('page_details')
+                        ->join('pages', function ($join) use ($pageID){
+                            //dd($join);
+                            $join->on('page_details.page_id', '=', 'pages.id')
+                                ->where('pages.id', '=', $pageID);
+                        })
+                        ->join('widget', 'widget.id', '=', 'page_details.widget_id')
+                        ->select('widget.name')
+                        ->get();
+        return $pageWidgets;
+    }
+
+    private function pageWidgetsExistByPageID($pageID = null){
+        $pageWidgets = DB::table('page_details')
+                        ->join('pages', function ($join) use ($pageID){
+                            //dd($join);
+                            $join->on('page_details.page_id', '=', 'pages.id')
+                                ->where('pages.id', '=', $pageID);
+                        })
+                        ->join('widget', 'widget.id', '=', 'page_details.widget_id')
+                        ->select('widget.name')
+                        ->count();
+        return $pageWidgets;
+    }
+
+
     public function pageExist($index = null)
     {
-        $R_pageName = str_replace('.php', '', $index);
-        if(Pages::where([['name', '=', $R_pageName],['slug', '=', $index.'']])->count() > 0){
-            dd("Page Found");
+        if(Pages::where([['name', '=', $index],['slug', '=', $index.'.php']])->count() > 0){
             return true;
+        }else{
+            return false;
+        }
+    }
+    public function getPage($index = null)
+    {
+        if($this->pageExist($index)){
+            $pageID = $this->getPageIDbyName($index);
+            if($this->pageWidgetsExistByPageID($pageID) > 0){
+                $widgets = $this->getPageWidgetsByPageID($pageID);
+                return $widgets;
+            }else{
+                dd("Page Widget NOT Found");
+                return false;
+            }
         }else{
             dd("Page NOT Found");
             return false;
