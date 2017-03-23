@@ -26,6 +26,8 @@
         ]) !!};
     </script>
 
+    @yield('stylesheets')
+
 </head>
 <body>
 

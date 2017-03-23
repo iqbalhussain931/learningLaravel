@@ -13,6 +13,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="../css/bootstrap/bootstrap.css" />
@@ -99,7 +100,7 @@
             <li class="active"><a href="#"><i class="fa fa-bookmark-o"></i><span class="nav-label">Dashboard</span></a></li>
             <li><a href="pages-url"><i class="fa fa-bookmark-o"></i><span class="nav-label">Pages URL</span></a></li>
             <li><a href="pages"><i class="fa fa-bookmark-o"></i><span class="nav-label">Pages</span></a></li>
-            <li><a href="wi"><i class="fa fa-bookmark-o"></i><span class="nav-label">Widgets</span></a></li>
+            <li><a href="widgets"><i class="fa fa-bookmark-o"></i><span class="nav-label">Widgets</span></a></li>
             <li class="has-submenu"><a href="#"><i class="fa fa-comment-o"></i> <span class="nav-label">Widgets &amp; Apps</span></a>
                 <ul class="list-unstyled">
                     <li><a href="email.html">Email</a></li>

@@ -58,7 +58,7 @@ class Pages extends Model
                         })
                         ->join('widget', 'widget.id', '=', 'page_details.widget_id')
                         ->select('widget.name')
-                        ->get();
+                        ->orderBy('widget_order', 'asc')->get();
         return $pageWidgets;
     }
 
