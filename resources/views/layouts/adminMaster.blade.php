@@ -63,11 +63,13 @@
 </div>
 <!-- Preloader -->
 
+
 <aside class="left-panel">
 
     <div class="user text-center">
         <img src="../images/avtar/user.png" class="img-circle" alt="...">
         <h4 class="user-name">{{ Auth::user()->name }}</h4>
+        {{--{{ $allSession = Session::get('url_indexes') }}--}}
 
         <div class="dropdown user-login">
             <button class="btn btn-xs dropdown-toggle btn-rounded" type="button" data-toggle="dropdown" aria-expanded="true">
@@ -156,6 +158,9 @@
                     <li><a href="blank.html">Blank Page</a></li>
 
                 </ul>
+            </li>
+            <li class="has-submenu"><a href="#"><i class="fa fa-star-o"></i> <span class="nav-label">{{  $number_of_indexes  }}</span></a>
+
             </li>
         </ul>
     </nav>

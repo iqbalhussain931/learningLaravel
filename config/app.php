@@ -14,6 +14,10 @@ return [
 
     'name' => 'Laravel',
 
+
+
+    'slashCount' => 0,
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

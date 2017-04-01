@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/cms', 'AdminController@index');
 Route::get('/cms/home', 'AdminController@index');
 Route::get('/cms/pages', 'AdminController@pages');
+Route::get('/cms/pages/edit/{pageName}', 'AdminController@pageEdit');
 Route::get('/cms/pages-url', 'AdminController@pagesUrl');
 Route::post('/cms/pages-url', 'AdminController@pagesUrl');
 Route::post('/cms/pages', 'AdminController@pages');

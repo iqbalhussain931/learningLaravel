@@ -8,17 +8,41 @@ use App\Pages_urls;
 use App\Pages;
 use App\Widget;
 use League\Flysystem\Exception;
+use Session;
+use View;
+
 
 class AdminController extends Controller
 {
+    protected $number_of_indexes;
+
+    public function __construct(Request $request)
+    {
+        $contSlashes = substr_count($this->url($request),"/") - 3 ;
+        //dd($contSlashes);
+        $this->number_of_indexes = config(['app.slashCount' => $contSlashes]);
+
+        View::share('number_of_indexes', $this->number_of_indexes);
+    }
     public function index()
     {
         return view('cms/home');
+    }
+    public function url(Request $request)
+    {
+        return $url = $request->url();
     }
     public function pages()
     {
         $pages = Pages::orderBy('id', 'asc')->get();
         return view('cms/pages' ,compact('pages'));
+    }
+    public function pageEdit(Request $request)
+    {
+        $pages = Pages::orderBy('id', 'asc')->get();
+        //$allSession = Session::get('url');
+
+        return view('cms/pageEdit' ,compact('pages'));
     }
     public function pagesUrl( Request $request)
     {

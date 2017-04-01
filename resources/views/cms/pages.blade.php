@@ -13,7 +13,7 @@
     <div class="page-header"><h1>Pages</h1></div>
 
     <div class="panel panel-default">
-        <div class="panel-heading">Basic DataTable</div>
+        <div class="panel-heading">Basic DataTable {{--{{ config('app.url') }}--}}</div>
         <div class="panel-body">
 
             <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="basic-datatable">
@@ -32,7 +32,7 @@
                         <td>{{ $page->id }}</td>
                         <td>{{ $page->name }}</td>
                         <td>{{ $page->slug }}</td>
-                        <td class="center"><a href="#">Edit</a></td>
+                        <td class="center"><a href="{{ App::make('url')->to('/') }}/cms/pages/edit/{{ $page->name }}">Edit</a></td>
                         <td class="center"><a href="#">Delete</a></td>
                     </tr>
                 @endforeach
