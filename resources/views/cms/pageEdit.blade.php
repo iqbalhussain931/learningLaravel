@@ -2,23 +2,24 @@
 
 @section('stylesheets')
     <!-- Switch Buttons  -->
-    <link rel="stylesheet" href="../../../css/switch-buttons/switch-buttons.css" />
+    <link rel="stylesheet" href="../../../../css/switch-buttons/switch-buttons.css" />
     <!-- Chosen Select  -->
-    <link rel="stylesheet" href="../../../css/plugins/bootstrap-chosen/chosen.css" />
+    <link rel="stylesheet" href="../../../../css/plugins/bootstrap-chosen/chosen.css" />
 @endsection
 
 @section('content')
 
     <div class="col-lg-8 col-lg-offset-1">
-        {!! Form::open(['class' => 'form-horizontal validator-form','id'=>'addPageForm']) !!}
+        {!! Form::model('pages', ['class'=>'form-horizontal validator-form','id'=>'editPageForm']) !!}
         <div class="form-group">
-            <label class="col-lg-2 control-label">Name</label>
+            {{ Form::label('name' ,'Name',['class'=> 'col-lg-2 control-label']) }}
             <div class="col-lg-4">
-                <input type="text" class="form-control" name="name" />
+                {{ Form::text('name', 'example@gmail.com',['class' => 'form-control']) }}
             </div>
-            <label class="col-lg-2 control-label">Slug</label>
+
+            {{ Form::label('slug' ,'Slug',['class'=> 'col-lg-2 control-label']) }}
             <div class="col-lg-4">
-                <input type="text" class="form-control" name="slug" />
+                {{ Form::text('slug', null ,['class' => 'form-control']) }}
             </div>
         </div>
 

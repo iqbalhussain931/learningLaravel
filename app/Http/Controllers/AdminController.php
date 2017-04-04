@@ -18,11 +18,11 @@ class AdminController extends Controller
 
     public function __construct(Request $request)
     {
-        $contSlashes = substr_count($this->url($request),"/") - 3 ;
-        //dd($contSlashes);
-        $this->number_of_indexes = config(['app.slashCount' => $contSlashes]);
-
-        View::share('number_of_indexes', $this->number_of_indexes);
+        $contSlashes = substr_count($this->url($request),"/") - 2 ;
+        //dd(config('app.url'));
+        //$this->number_of_indexes = config(['app.slashCount' => $contSlashes]);
+        //dd($this->url($request));
+        View::share('number_of_indexes', $contSlashes);
     }
     public function index()
     {

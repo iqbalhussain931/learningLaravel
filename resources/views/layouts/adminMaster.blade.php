@@ -14,12 +14,16 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <?php $no_of_path = "" ?>
+    @for($no_of_indexes = 1 ; $no_of_indexes <= $number_of_indexes ; $no_of_indexes++)
+         <?php $no_of_path .= '../' ?>
+    @endfor
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="{{  $no_of_path  }}css/bootstrap/bootstrap.css" />
 
     <!-- FontAwesome core CSS -->
-    <link rel="stylesheet" href="../css/fontawesome/font-awesome.css" />
+    <link rel="stylesheet" href="{{  $no_of_path  }}css/fontawesome/font-awesome.css" />
 
     @yield('stylesheets')
 
@@ -34,7 +38,7 @@
     <!-- Scripts -->
 
     <!-- Base Styling  -->
-    <link rel="stylesheet" href="../css/app/app.v1.css" />
+    <link rel="stylesheet" href="{{  $no_of_path  }}css/app/app.v1.css" />
 
     <script>
         window.Laravel = {!! json_encode([
@@ -67,7 +71,7 @@
 <aside class="left-panel">
 
     <div class="user text-center">
-        <img src="../images/avtar/user.png" class="img-circle" alt="...">
+        <img src="{{  $no_of_path  }}images/avtar/user.png" class="img-circle" alt="...">
         <h4 class="user-name">{{ Auth::user()->name }}</h4>
         {{--{{ $allSession = Session::get('url_indexes') }}--}}
 
@@ -100,9 +104,9 @@
     <nav class="navigation">
         <ul class="list-unstyled">
             <li class="active"><a href="#"><i class="fa fa-bookmark-o"></i><span class="nav-label">Dashboard</span></a></li>
-            <li><a href="pages-url"><i class="fa fa-bookmark-o"></i><span class="nav-label">Pages URL</span></a></li>
-            <li><a href="pages"><i class="fa fa-bookmark-o"></i><span class="nav-label">Pages</span></a></li>
-            <li><a href="widgets"><i class="fa fa-bookmark-o"></i><span class="nav-label">Widgets</span></a></li>
+            <li><a href="{{config('app.url')}}/cms/pages-url"><i class="fa fa-bookmark-o"></i><span class="nav-label">Pages URL</span></a></li>
+            <li><a href="{{config('app.url')}}/cms/pages"><i class="fa fa-bookmark-o"></i><span class="nav-label">Pages</span></a></li>
+            <li><a href="{{config('app.url')}}/cms/widgets"><i class="fa fa-bookmark-o"></i><span class="nav-label">Widgets</span></a></li>
             <li class="has-submenu"><a href="#"><i class="fa fa-comment-o"></i> <span class="nav-label">Widgets &amp; Apps</span></a>
                 <ul class="list-unstyled">
                     <li><a href="email.html">Email</a></li>
@@ -159,9 +163,6 @@
 
                 </ul>
             </li>
-            <li class="has-submenu"><a href="#"><i class="fa fa-star-o"></i> <span class="nav-label">{{  $number_of_indexes  }}</span></a>
-
-            </li>
         </ul>
     </nav>
 
@@ -212,7 +213,7 @@
                         <a href="#" class="list-group-item">
                             <div class="media">
                                 <div class="user-status busy pull-left">
-                                    <img class="media-object img-circle pull-left" src="../images/avtar/user2.png" alt="user#1" width="40">
+                                    <img class="media-object img-circle pull-left" src="{{  $no_of_path  }}images/avtar/user2.png" alt="user#1" width="40">
                                 </div>
                                 <div class="media-body">
                                     <h5 class="media-heading">Lorem ipsum dolor sit consect....</h5>
@@ -223,7 +224,7 @@
                         <a href="#" class="list-group-item">
                             <div class="media">
                                 <div class="user-status offline pull-left">
-                                    <img class="media-object img-circle pull-left" src="../images/avtar/user3.png" alt="user#1" width="40">
+                                    <img class="media-object img-circle pull-left" src="{{  $no_of_path  }}images/avtar/user3.png" alt="user#1" width="40">
                                 </div>
                                 <div class="media-body">
                                     <h5 class="media-heading">Nunc elementum, enim vitae</h5>
@@ -234,7 +235,7 @@
                         <a href="#" class="list-group-item">
                             <div class="media">
                                 <div class="user-status invisibled pull-left">
-                                    <img class="media-object img-circle pull-left" src="../images/avtar/user4.png" alt="user#1" width="40">
+                                    <img class="media-object img-circle pull-left" src="{{  $no_of_path  }}images/avtar/user4.png" alt="user#1" width="40">
                                 </div>
                                 <div class="media-body">
                                     <h5 class="media-heading">Praesent lacinia, arcu eget</h5>
@@ -245,7 +246,7 @@
                         <a href="#" class="list-group-item">
                             <div class="media">
                                 <div class="user-status online pull-left">
-                                    <img class="media-object img-circle pull-left" src="../images/avtar/user5.png" alt="user#1" width="40">
+                                    <img class="media-object img-circle pull-left" src="{{  $no_of_path  }}images/avtar/user5.png" alt="user#1" width="40">
                                 </div>
                                 <div class="media-body">
                                     <h5 class="media-heading">In mollis blandit tempor.</h5>
@@ -371,17 +372,17 @@
 <!-- Content Block Ends Here (right box)-->
 
 <!-- JQuery v1.9.1 -->
-<script src="../js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="../js/plugins/underscore/underscore-min.js"></script>
+<script src="{{  $no_of_path  }}js/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="{{  $no_of_path  }}js/plugins/underscore/underscore-min.js"></script>
 <!-- Bootstrap -->
-<script src="../js/bootstrap/bootstrap.min.js"></script>
+<script src="{{  $no_of_path  }}js/bootstrap/bootstrap.min.js"></script>
 
 @yield('scripts')
 
 <!-- Custom JQuery -->
-<script src="../js/app/custom.js" type="text/javascript"></script>
-<script src="../js/app/jquery-ui.js" type="text/javascript"></script>
-<script src="../js/custom/myJS.js" type="text/javascript"></script>
+<script src="{{  $no_of_path  }}js/app/custom.js" type="text/javascript"></script>
+<script src="{{  $no_of_path  }}js/app/jquery-ui.js" type="text/javascript"></script>
+<script src="{{  $no_of_path  }}js/custom/myJS.js" type="text/javascript"></script>
 
 </body>
 </html>

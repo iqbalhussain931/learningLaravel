@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="page-header">
-        <h1><a href="createPage" class="btn btn-primary btn-circle">Add Page</a></h1>
+        <h1><a href="{{config('app.url')}}/cms/createPage" class="btn btn-primary btn-circle">Add Page</a></h1>
     </div>
     <div class="page-header"><h1>Pages</h1></div>
 
@@ -32,7 +32,7 @@
                         <td>{{ $page->id }}</td>
                         <td>{{ $page->name }}</td>
                         <td>{{ $page->slug }}</td>
-                        <td class="center"><a href="{{ App::make('url')->to('/') }}/cms/pages/edit/{{ $page->name }}">Edit</a></td>
+                        <td class="center"><a href="{{config('app.url')}}/cms/pages/edit/{{ $page->name }}">Edit</a></td>
                         <td class="center"><a href="#">Delete</a></td>
                     </tr>
                 @endforeach
